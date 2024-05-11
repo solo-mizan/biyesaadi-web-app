@@ -1,30 +1,32 @@
 import { ArrowRight, Divide, Search } from "lucide-react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants, Button } from "./ui/button";
+import { auth, currentUser } from "@clerk/nextjs/server";
+import { SignOutButton } from "@clerk/nextjs";
 
-const Navbar = () => {
-  const user = true;
+const Navbar = async () => {
+  const { userId } = auth();
+  const user = await currentUser();
   const isAdmin = false;
-
   return (
     <nav className="top-0 z-[100] sticky inset-x-0 border-gray-200 bg-white/70 backdrop-blur-lg border-b w-full h-14 transition-all navbar">
       <MaxWidthWrapper>
         <div className="flex justify-between items-center border-zinc-200 border-b h-14">
-          <Link href="" className="z-40 flex font-semibold">
+          <Link href="/" className="z-40 flex font-semibold">
             biye <span className="text-green-600">saadi</span>
           </Link>
           <div className="flex items-center space-x-4 h-full">
             {user ? (
               <>
                 <Link
-                  href="/api/auth/logout"
+                  href=""
                   className={buttonVariants({
                     size: "sm",
                     variant: "ghost",
                   })}
                 >
-                  Sign out
+                  <SignOutButton />
                 </Link>
                 {isAdmin ? (
                   <Link
@@ -51,7 +53,7 @@ const Navbar = () => {
             ) : (
               <>
                 <Link
-                  href="/api/auth/register"
+                  href="/sign-up"
                   className={buttonVariants({
                     size: "sm",
                     variant: "ghost",
@@ -60,7 +62,7 @@ const Navbar = () => {
                   Sign up
                 </Link>
                 <Link
-                  href="/api/auth/logout"
+                  href="/sign-in"
                   className={buttonVariants({
                     size: "sm",
                     variant: "ghost",
