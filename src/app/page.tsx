@@ -12,37 +12,43 @@ export default function Home() {
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative flex flex-col items-center lg:items-start mx-auto text-center lg:text-left">
               <div className="lg:block -top-20 left-0 absolute hidden w-28">
-                <img src="/snake-1.png" alt="logo"/>
+                <img src="/snake-1.png" alt="logo" />
               </div>
-              <h1
-                className="relative mt-16 w-fit font-bold text-5xl text-balance text-gray-900 md:text-6xl lg:text-7xl !leading-tight tracking-tight"
-              >Find your&nbsp;<span
-                  className="bg-green-600 px-2 text-white"
-                >soulmate</span>&nbsp;within our trusted network
+              <h1 className="relative mt-16 w-fit font-bold text-5xl text-balance text-gray-900 md:text-6xl lg:text-7xl !leading-tight tracking-tight">
+                Find your&nbsp;
+                <span className="bg-green-600 px-2 text-white">soulmate</span>
+                &nbsp;within our trusted network
               </h1>
-              <p className="mt-8 lg:pr-10 max-w-prose text-balance text-center text-lg md:text-wrap lg:text-left">Don&apos;t settle for just anyone. Find someone who truly understand and cherishes you. Let <span className="bg-slate-500 bg-slate-700 px-1 font-semibold text-white">Duo</span> guide you on your journey to love.</p>
+              <p className="mt-8 lg:pr-10 max-w-prose text-balance text-center text-lg md:text-wrap lg:text-left">
+                Don&apos;t settle for just anyone. Find someone who truly
+                understand and cherishes you. Let{" "}
+                <span className="bg-black bg-slate-700 px-1 font-semibold text-white">
+                  biye<span className="text-green-400">saadi</span>
+                </span>{" "}
+                guide you on your journey to love.
+              </p>
               <ul className="flex flex-col items-center sm:items-start space-y-2 mt-8 font-medium text-left">
                 <div className="space-y-2">
                   <li className="flex items-center gap-1.5 text-left">
                     <Check className="w-5 h-5 text-green-600 shrink-0" />
                     Free to join and create a profile
-                  </li>          
+                  </li>
                   <li className="flex items-center gap-1.5 text-left">
                     <Check className="w-5 h-5 text-green-600 shrink-0" />
                     Advanced search filters to find compatible matches.
-                  </li>          
+                  </li>
                   <li className="flex items-center gap-1.5 text-left">
                     <Check className="w-5 h-5 text-green-600 shrink-0" />
                     Detailed profiles to showcase your personality and interests
-                  </li>          
+                  </li>
                   <li className="flex items-center gap-1.5 text-left">
                     <Check className="w-5 h-5 text-green-600 shrink-0" />
                     Verified profiles for added peace of mind
-                  </li>          
+                  </li>
                   <li className="flex items-center gap-1.5 text-left">
                     <Check className="w-5 h-5 text-green-600 shrink-0" />
                     Positive and inclusive environment for all singles
-                  </li>          
+                  </li>
                 </div>
               </ul>
               <div className="flex sm:flex-row flex-col items-center sm:items-start gap-5 mt-12">
@@ -85,14 +91,14 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col justify-between items-center sm:items-start">
                   <div className="flex gap-0.5">
-                    <Star className="w-4 h-4 text-green-600 fill-green-500"/>
-                    <Star className="w-4 h-4 text-green-600 fill-green-500"/>
-                    <Star className="w-4 h-4 text-green-600 fill-green-500"/>
-                    <Star className="w-4 h-4 text-green-600 fill-green-500"/>
-                    <Star className="w-4 h-4 text-green-600 fill-green-500"/>
+                    <Star className="w-4 h-4 text-green-600 fill-green-500" />
+                    <Star className="w-4 h-4 text-green-600 fill-green-500" />
+                    <Star className="w-4 h-4 text-green-600 fill-green-500" />
+                    <Star className="w-4 h-4 text-green-600 fill-green-500" />
+                    <Star className="w-4 h-4 text-green-600 fill-green-500" />
                   </div>
                   <p>
-                    <span className="font-semibold">7,346</span> happy customers
+                    <span className="font-semibold">7,346</span> happy couples
                   </p>
                 </div>
               </div>
@@ -111,13 +117,9 @@ export default function Home() {
                 alt="line image"
                 className="-bottom-6 -left-6 absolute w-20 select-none"
               />
-              <Couple
-                className="w-65"
-                imgSrc="/testimonials/-1.jpg"
-              />
+              <Couple className="w-65" imgSrc="/testimonials/-1.jpg" />
             </div>
           </div>
-
         </MaxWidthWrapper>
       </section>
     </div>
