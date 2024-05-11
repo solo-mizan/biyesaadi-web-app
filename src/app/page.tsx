@@ -1,13 +1,13 @@
 import Couple from "@/components/couple";
 import { Icons } from "@/components/icons";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
-import { Check, Plus, PlusIcon, Star } from "lucide-react";
+import { Check, Heart, Plus, PlusIcon, Star } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
   return (
     <div className="bg-slate-50">
-      <section>
+      <section className="grainy-light">
         <MaxWidthWrapper className="lg:gap-x-0 xl:gap-x-8 lg:grid lg:grid-cols-3 pt-10 lg:pt-24 xl:pt-32 pb-24 sm:pb-32 lg:pb-52">
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative flex flex-col items-center lg:items-start mx-auto text-center lg:text-left">
@@ -22,7 +22,7 @@ export default async function Home() {
               <p className="mt-8 lg:pr-10 max-w-prose text-balance text-center text-lg md:text-wrap lg:text-left">
                 Don&apos;t settle for just anyone. Find someone who truly
                 understand and cherishes you. Let{" "}
-                <span className="bg-black bg-slate-700 px-1 font-semibold text-white">
+                <span className="bg-slate-700 px-1 font-semibold text-white">
                   biye<span className="text-green-400">saadi</span>
                 </span>{" "}
                 guide you on your journey to love.
@@ -128,13 +128,14 @@ export default async function Home() {
         <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
           <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6">
             <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
-              What our{" "}
-              <span className="relative px-2">
-                customers{" "}
-                <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-green-500 pointer-events-none" />
-              </span>{" "}
-              say
+              Hear from{" "}
+              <span className="relative px-2 text-blue-600">
+                couples{" "}
+                <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-purple-600 pointer-events-none" />
+              </span>
             </h2>
+            <img src="/snake-2.png" className="order-0 lg:order-2 w-24" />
+            <Heart className="order-0 lg:order-2 w-12 h-12 text-red-500 fill-orange-600" />
             <img src="/snake-2.png" className="order-0 lg:order-2 w-24" />
           </div>
 
@@ -214,8 +215,6 @@ export default async function Home() {
             </div>
           </div>
         </MaxWidthWrapper>
-
-        <div className="pt-16">{/* <Reviews /> */}</div>
       </section>
     </div>
   );
