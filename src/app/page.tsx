@@ -16,10 +16,9 @@ export default function Home() {
               </div>
               <h1
                 className="relative mt-16 w-fit font-bold text-5xl text-balance text-gray-900 md:text-6xl lg:text-7xl !leading-tight tracking-tight"
-              >Find your <span
+              >Find your&nbsp;<span
                   className="bg-green-600 px-2 text-white"
-                >soulmate </span>
-                within our trusted network
+                >soulmate</span>&nbsp;within our trusted network
               </h1>
               <p className="mt-8 lg:pr-10 max-w-prose text-balance text-center text-lg md:text-wrap lg:text-left">Don&apos;t settle for just anyone. Find someone who truly understand and cherishes you. Let <span className="bg-slate-500 bg-slate-700 px-1 font-semibold text-white">Duo</span> guide you on your journey to love.</p>
               <ul className="flex flex-col items-center sm:items-start space-y-2 mt-8 font-medium text-left">
