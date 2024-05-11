@@ -1,6 +1,7 @@
 import Couple from "@/components/couple";
+import { Icons } from "@/components/icons";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
-import { Check, Star } from "lucide-react";
+import { Check, Plus, PlusIcon, Star } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
@@ -109,7 +110,7 @@ export default async function Home() {
               <img
                 src="/your-image.png"
                 alt="customer image"
-                className="sm:block xl:block -top-20 left-56 absolute hidden lg:hidden w-40 lg:w-52 select-none"
+                className="sm:block xl:block -top-20 left-56 z-40 absolute hidden lg:hidden w-40 lg:w-52 select-none"
               />
               <img
                 src="/line.png"
@@ -120,6 +121,101 @@ export default async function Home() {
             </div>
           </div>
         </MaxWidthWrapper>
+      </section>
+
+      {/* value proposition section */}
+      <section className="bg-slate-100 py-24 grainy-dark">
+        <MaxWidthWrapper className="flex flex-col items-center gap-16 sm:gap-32">
+          <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6">
+            <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
+              What our{" "}
+              <span className="relative px-2">
+                customers{" "}
+                <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-green-500 pointer-events-none" />
+              </span>{" "}
+              say
+            </h2>
+            <img src="/snake-2.png" className="order-0 lg:order-2 w-24" />
+          </div>
+
+          <div className="gap-y-16 grid grid-cols-1 lg:grid-cols-2 mx-auto lg:mx-0 px-4 max-w-2xl lg:max-w-none">
+            <div className="flex flex-col flex-auto gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  "As someone who's been out of the dating scene for a while, I
+                  was nervous about getting back in.{" "}
+                  <span className="bg-black bg-slate-700 px-1 font-semibold text-white">
+                    biye<span className="text-green-400">saadi</span>
+                  </span>{" "}
+                  made everything so easy. The user interface is
+                  straightforward, and there are plenty of singles in my age
+                  range. I met a wonderful woman who shares my passions – we
+                  couldn't be happier!"
+                </p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img
+                  className="rounded-full w-12 h-12 object-cover"
+                  src="tofazzol.jpg"
+                  alt="user"
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Tofazzol Haque</p>
+                  <div className="flex items-center gap-1.5 text-zinc-600">
+                    <Check className="w-4 h-4 text-green-600 stroke-[3px]" />
+                    <p className="text-sm">Verified Purchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* second user review */}
+            <div className="flex flex-col flex-auto gap-4 lg:pr-8 xl:pr-20">
+              <div className="flex gap-0.5 mb-2">
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+                <Star className="w-5 h-5 text-green-600 fill-green-600" />
+              </div>
+              <div className="text-lg leading-8">
+                <p>
+                  "I'd tried other dating apps with no luck.{" "}
+                  <span className="bg-black bg-slate-700 px-1 font-semibold text-white">
+                    biye<span className="text-green-400">saadi</span>
+                  </span>{" "}
+                  felt different. The matching system is amazing – I met
+                  incredible people I wouldn't have otherwise. It took some
+                  time, but I finally found the love of my life. We're so
+                  grateful for this app!"
+                </p>
+              </div>
+              <div className="flex gap-4 mt-2">
+                <img
+                  className="rounded-full w-12 h-12 object-cover"
+                  src="badol.jpg"
+                  alt="user"
+                />
+                <div className="flex flex-col">
+                  <p className="font-semibold">Badol Molla</p>
+                  <div className="flex items-center gap-1.5 text-zinc-600">
+                    <Check className="w-4 h-4 text-green-600 stroke-[3px]" />
+                    <p className="text-sm">Verified Purchase</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+
+        <div className="pt-16">{/* <Reviews /> */}</div>
       </section>
     </div>
   );
