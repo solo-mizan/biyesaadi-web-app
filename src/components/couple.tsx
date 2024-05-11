@@ -23,11 +23,7 @@ const Couple = ({ imgSrc, className, dark = false, ...props }: CoupleProps) => {
         alt="couple image"
       />
       <div className="-z-10 absolute inset-0">
-        <img
-          className="object-cover"
-          src={imgSrc}
-          alt="overlaying couple image"
-        />
+        <img className="object-cover" src={imgSrc} alt="couple image" />
       </div>
     </div>
   );
