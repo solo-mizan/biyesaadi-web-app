@@ -1,6 +1,5 @@
 import Couple from "@/components/couple";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
-import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Check, Star } from "lucide-react";
 import Image from "next/image";
 
