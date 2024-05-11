@@ -149,15 +149,15 @@ export default async function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "As someone who's been out of the dating scene for a while, I
-                  was nervous about getting back in.{" "}
+                  &quot;As someone who&apos;s been out of the dating scene for a
+                  while, I was nervous about getting back in.{" "}
                   <span className="bg-black bg-slate-700 px-1 font-semibold text-white">
                     biye<span className="text-green-400">saadi</span>
                   </span>{" "}
                   made everything so easy. The user interface is
                   straightforward, and there are plenty of singles in my age
                   range. I met a wonderful woman who shares my passions – we
-                  couldn't be happier!"
+                  couldn&apos;t be happier!&quot;
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
@@ -187,14 +187,14 @@ export default async function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "I'd tried other dating apps with no luck.{" "}
+                  &quot;I&apos;d tried other dating apps with no luck.{" "}
                   <span className="bg-black bg-slate-700 px-1 font-semibold text-white">
                     biye<span className="text-green-400">saadi</span>
                   </span>{" "}
                   felt different. The matching system is amazing – I met
-                  incredible people I wouldn't have otherwise. It took some
-                  time, but I finally found the love of my life. We're so
-                  grateful for this app!"
+                  incredible people I wouldn&apos;t have otherwise. It took some
+                  time, but I finally found the love of my life. We&apos;re so
+                  grateful for this app!&quot;
                 </p>
               </div>
               <div className="flex gap-4 mt-2">
