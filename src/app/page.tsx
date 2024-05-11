@@ -1,3 +1,4 @@
+import Couple from "@/components/couple";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { StarFilledIcon } from "@radix-ui/react-icons";
 import { Check, Star } from "lucide-react";
@@ -46,26 +47,26 @@ export default function Home() {
                 </div>
               </ul>
               <div className="flex sm:flex-row flex-col items-center sm:items-start gap-5 mt-12">
-                <div className="flex -space-x-3">
+                <div className="flex -space-x-2">
                   <Image
                     width={100}
                     height={100}
                     className="inline-block rounded-full w-10 h-10 ring-2 ring-slate-100"
-                    src="/users/user-1.png"
+                    src="/users/user-5.jpg"
                     alt="user image"
                   />
                   <Image
                     width={100}
                     height={100}
                     className="inline-block rounded-full w-10 h-10 ring-2 ring-slate-100"
-                    src="/users/user-2.png"
+                    src="/users/user-2.jpg"
                     alt="user image"
                   />
                   <Image
                     width={100}
                     height={100}
                     className="inline-block rounded-full w-10 h-10 ring-2 ring-slate-100"
-                    src="/users/user-3.png"
+                    src="/users/user-3.jpg"
                     alt="user image"
                   />
                   <Image
@@ -79,7 +80,7 @@ export default function Home() {
                     width={100}
                     height={100}
                     className="inline-block rounded-full w-10 h-10 object-cover ring-2 ring-slate-100"
-                    src="/users/user-5.jpg"
+                    src="/users/user-1.jpg"
                     alt="user image"
                   />
                 </div>
@@ -91,10 +92,33 @@ export default function Home() {
                     <Star className="w-4 h-4 text-green-600 fill-green-500"/>
                     <Star className="w-4 h-4 text-green-600 fill-green-500"/>
                   </div>
+                  <p>
+                    <span className="font-semibold">7,346</span> happy customers
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <div className="flex justify-center col-span-full lg:col-span-1 lg:mx-0 mt-32 lg:mt-20 px-8 sm:px-16 md:px-0 w-full h-fit">
+            <div className="relative md:max-w-xl">
+              <img
+                src="/your-image.png"
+                alt="customer image"
+                className="sm:block xl:block -top-20 left-56 absolute hidden lg:hidden w-40 lg:w-52 select-none"
+              />
+              <img
+                src="/line.png"
+                alt="line image"
+                className="-bottom-6 -left-6 absolute w-20 select-none"
+              />
+              <Couple
+                className="w-65"
+                imgSrc="/testimonials/-1.jpg"
+              />
+            </div>
+          </div>
+
         </MaxWidthWrapper>
       </section>
     </div>
