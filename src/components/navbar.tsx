@@ -3,7 +3,7 @@ import MaxWidthWrapper from "./max-width-wrapper";
 import Link from "next/link";
 import { buttonVariants, Button } from "./ui/button";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { SignOutButton } from "@clerk/nextjs";
+import { SignOutButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = async () => {
   const { userId } = auth();
@@ -23,11 +23,20 @@ const Navbar = async () => {
                   href=""
                   className={buttonVariants({
                     size: "sm",
+                    variant: "outline",
+                  })}
+                >
+                  <UserButton />
+                </Link>
+                {/* <Link
+                  href=""
+                  className={buttonVariants({
+                    size: "sm",
                     variant: "ghost",
                   })}
                 >
                   <SignOutButton />
-                </Link>
+                </Link> */}
                 {isAdmin ? (
                   <Link
                     href="/api/auth/dashboard"
