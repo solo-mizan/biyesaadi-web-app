@@ -1,6 +1,7 @@
 import Couple from "@/components/couple";
 import { Icons } from "@/components/icons";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
+import { Reviews } from "@/components/reviews";
 import { Check, Heart, Plus, PlusIcon, Star } from "lucide-react";
 import Image from "next/image";
 
@@ -117,7 +118,7 @@ export default async function Home() {
                 alt="line image"
                 className="-bottom-6 -left-6 absolute w-20 select-none"
               />
-              <Couple className="w-65" imgSrc="/testimonials/-1.jpg" />
+              <Couple className="w-65" imgSrc="/testimonials/couple-1.jpg" />
             </div>
           </div>
         </MaxWidthWrapper>
@@ -215,6 +216,10 @@ export default async function Home() {
             </div>
           </div>
         </MaxWidthWrapper>
+
+        <div className="pt-16">
+          <Reviews />
+        </div>
       </section>
     </div>
   );
