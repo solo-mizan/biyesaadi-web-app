@@ -172,7 +172,7 @@ export default async function Home() {
                   <p className="font-semibold">Tofazzol Haque</p>
                   <div className="flex items-center gap-1.5 text-zinc-600">
                     <Check className="w-4 h-4 text-green-600 stroke-[3px]" />
-                    <p className="text-sm">Verified Purchase</p>
+                    <p className="text-sm">Verified User</p>
                   </div>
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default async function Home() {
                   <p className="font-semibold">Badol Molla</p>
                   <div className="flex items-center gap-1.5 text-zinc-600">
                     <Check className="w-4 h-4 text-green-600 stroke-[3px]" />
-                    <p className="text-sm">Verified Purchase</p>
+                    <p className="text-sm">Verified User</p>
                   </div>
                 </div>
               </div>
