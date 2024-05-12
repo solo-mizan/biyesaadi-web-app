@@ -5,19 +5,23 @@ import MaxWidthWrapper from "./max-width-wrapper";
 import { useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Couple from "./couple";
+import { Icons } from "./icons";
+import { Search, SearchIcon } from "lucide-react";
 
 interface ReviewProps extends HTMLAttributes<HTMLDivElement> {
   imgSrc: string;
 }
 
 const COUPLES = [
-  "testimonials/1.jpg",
-  "testimonials/2.jpg",
-  "testimonials/3.jpg",
-  "testimonials/4.jpg",
-  "testimonials/5.jpg",
-  "testimonials/6.jpg",
-  "testimonials/7.jpg",
+  "/testimonials/1.jpg",
+  "/testimonials/2.jpg",
+  "/testimonials/3.jpg",
+  "/testimonials/4.jpg",
+  "/testimonials/5.jpg",
+  "/testimonials/6.jpg",
+  "/testimonials/7.jpg",
+  "/testimonials/8.jpg",
+  "/testimonials/9.jpg",
 ];
 
 function splitArray<T>(array: Array<T>, numParts: number) {
@@ -48,6 +52,7 @@ function Review({ imgSrc, className, ...props }: ReviewProps) {
     POSSIBLE_ANIMATION_DELAYS[
       Math.floor(Math.random() * POSSIBLE_ANIMATION_DELAYS.length)
     ];
+
   return (
     <div
       style={{ animationDelay }}
@@ -123,6 +128,7 @@ export const ReviewGrid = () => {
     >
       {isInView ? (
         <>
+          {/* first column  */}
           <ReviewColumn
             reviews={[...column1, ...column3.flat(), ...column2]}
             reviewClassName={(reviewIndex) =>
@@ -133,16 +139,18 @@ export const ReviewGrid = () => {
             }
             msPerPixel={10}
           />
+
+          {/* second column  */}
           <ReviewColumn
             reviews={[...column2, ...column3[1]]}
+            className="md:block hidden"
             reviewClassName={(reviewIndex) =>
-              cn({
-                "md:hidden": reviewIndex >= column1.length + column3[0].length,
-                "lg:hidden": reviewIndex >= column1.length,
-              })
+              reviewIndex >= column2.length ? "lg:hidden" : ""
             }
             msPerPixel={15}
           />
+
+          {/* third column  */}
           <ReviewColumn
             reviews={column3.flat()}
             className="md:block hidden"
@@ -159,11 +167,22 @@ export const ReviewGrid = () => {
 export const Reviews = () => {
   return (
     <MaxWidthWrapper className="relative max-w-5xl">
-      <img
+      {/* <img
         aria-hidden="true"
-        src="what-people-are-buying.png"
-        className="xl:block top-1/3 -left-32 hidden select-none aboslute"
-      />
+        src="/what-people-are-buying.png"
+        className="xl:block top-1/3 -left-32 absolute hidden select-none"
+      /> */}
+      <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6">
+        <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
+          <span className="bg-green-600 px-2 text-white">Singles</span> who are
+          looking for{" "}
+          <span className="relative px-2 text-purple-600">
+            partners{" "}
+            <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-blue-600 pointer-events-none" />
+          </span>
+        </h2>
+        <Search className="order-0 lg:order-2 w-20 h-20 text-purple-700" />
+      </div>
       <ReviewGrid />
     </MaxWidthWrapper>
   );

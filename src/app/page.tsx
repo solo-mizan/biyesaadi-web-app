@@ -2,7 +2,7 @@ import Couple from "@/components/couple";
 import { Icons } from "@/components/icons";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Reviews } from "@/components/reviews";
-import { Check, Heart, Plus, PlusIcon, Star } from "lucide-react";
+import { Check, CirclePlus, Cross, Heart, Star } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
@@ -136,8 +136,11 @@ export default async function Home() {
               </span>
             </h2>
             <img src="/snake-2.png" className="order-0 lg:order-2 w-24" />
-            <Heart className="order-0 lg:order-2 w-12 h-12 text-red-500 fill-orange-600" />
-            <img src="/snake-2.png" className="order-0 lg:order-2 w-24" />
+            <Cross className="order-0 lg:order-2 w-12 h-12 text-lime-700 fill-slate-50" />
+            <img
+              src="/snake-2.png"
+              className="order-0 lg:order-2 w-24 transform -scale-x-100"
+            />
           </div>
 
           <div className="gap-y-16 grid grid-cols-1 lg:grid-cols-2 mx-auto lg:mx-0 px-4 max-w-2xl lg:max-w-none">
@@ -220,6 +223,12 @@ export default async function Home() {
         <div className="pt-16">
           <Reviews />
         </div>
+      </section>
+
+      <section>
+        <MaxWidthWrapper className="py-24">
+          <div></div>
+        </MaxWidthWrapper>
       </section>
     </div>
   );

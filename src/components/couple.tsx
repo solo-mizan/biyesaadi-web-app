@@ -17,13 +17,19 @@ const Couple = ({ imgSrc, className, dark = false, ...props }: CoupleProps) => {
     >
       <img
         src={
-          dark ? "/phone-template-dark-edges.png" : "/testimonials/couple-1.jpg"
+          dark
+            ? "/phone-template-dark-edges.png"
+            : "/phone-template-white-edges.png"
         }
-        className="z-50 border-2 border-green-600 border rounded-xl pointer-events-none select-none"
+        className="z-50 pointer-events-none select-none"
         alt="couple image"
       />
       <div className="-z-10 absolute inset-0">
-        <img className="object-cover" src={imgSrc} alt="couple image" />
+        <img
+          className="min-w-full min-h-full object-cover"
+          src={imgSrc}
+          alt="overlaying phone image"
+        />
       </div>
     </div>
   );
