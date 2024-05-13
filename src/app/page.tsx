@@ -118,7 +118,14 @@ export default async function Home() {
                 alt="line image"
                 className="-bottom-6 -left-6 absolute w-20 select-none"
               />
-              <Couple className="w-65" imgSrc="/testimonials/couple-1.jpg" />
+              {/* <Couple className="w-65" imgSrc="/happy-couple.jpg" /> */}
+              <Image
+                className="rounded rounded-2xl w-72"
+                src="/happy-couple.jpg"
+                height={800}
+                width={500}
+                alt="happy couple image"
+              />
             </div>
           </div>
         </MaxWidthWrapper>
@@ -227,7 +234,23 @@ export default async function Home() {
 
       <section>
         <MaxWidthWrapper className="py-24">
-          <div></div>
+          <div className="mb-12 px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl sm:text-center">
+              <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
+                Find your{" "}
+                <span className="bg-green-600 px-2 text-white">love story</span>{" "}
+                today -{" "}
+                <span className="relative px-2 text-blue-600">
+                  Sign up now!{" "}
+                  <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-purple-600 pointer-events-none" />
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="mx-auto px-6 lg:px-8 max-w-6xl">
+            <div className="relative flex flex-col items-center gap-40 md:grid grid-gap-40"></div>
+          </div>
         </MaxWidthWrapper>
       </section>
     </div>

@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
-  title: "Pairy",
+  title: "biyesaadi",
   description: "Trusted matrimonial matchmaking site",
 };
 

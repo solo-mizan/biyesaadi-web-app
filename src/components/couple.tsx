@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { HTMLAttributes } from "react";
 
 interface CoupleProps extends HTMLAttributes<HTMLDivElement> {
@@ -10,25 +11,19 @@ const Couple = ({ imgSrc, className, dark = false, ...props }: CoupleProps) => {
   return (
     <div
       className={cn(
-        "relative pointer-events-none z-50 overflow-hidden",
+        "relative pointer-events-none z-50 overflow-hidden rounded-xl",
         className
       )}
       {...props}
     >
-      <img
-        src={
-          dark
-            ? "/phone-template-dark-edges.png"
-            : "/phone-template-white-edges.png"
-        }
-        className="z-50 pointer-events-none select-none"
-        alt="couple image"
-      />
+      <div className="w-64 h-96" />
       <div className="-z-10 absolute inset-0">
-        <img
+        <Image
+          height={700}
+          width={500}
           className="min-w-full min-h-full object-cover"
           src={imgSrc}
-          alt="overlaying phone image"
+          alt="overlaying people image"
         />
       </div>
     </div>
