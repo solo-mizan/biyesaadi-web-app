@@ -2,10 +2,22 @@ import Couple from "@/components/couple";
 import { Icons } from "@/components/icons";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Reviews } from "@/components/reviews";
-import { Check, CirclePlus, Cross, Heart, Star } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { currentUser } from "@clerk/nextjs/server";
+import {
+  ArrowRight,
+  Check,
+  CirclePlus,
+  Cross,
+  Heart,
+  Star,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function Home() {
+  const user = await currentUser();
+
   return (
     <div className="bg-slate-50">
       <section className="grainy-light">
@@ -249,8 +261,79 @@ export default async function Home() {
           </div>
 
           <div className="mx-auto px-6 lg:px-8 max-w-6xl">
-            <div className="relative flex flex-col items-center gap-40 md:grid grid-gap-40"></div>
+            <div className="relative flex flex-col items-center gap-40 md:grid grid-cols-2">
+              <img
+                src="/arrow.png"
+                className="top-[25rem] md:top-1/2 left-1/2 z-10 absolute -translate-x-1/2 -translate-y-1/2 rotate-90 md:rotate-0"
+              />
+
+              <div className="relative md:justify-self-end bg-gray-900/5 rounded-xl lg:rounded-2xl w-full max-w-sm h-80 md:h-full ring-gray-900/10 ring-inset">
+                <img
+                  src="/seperate.png"
+                  className="bg-white shadow-2xl rounded-md w-full h-full object-cover ring-1 ring-gray-900/10"
+                  alt="seperate people pic"
+                />
+              </div>
+
+              {/* <Couple className="w-60" imgSrc="/horse_phone.jpg" /> */}
+              <Image
+                src="/together.jpg"
+                height={900}
+                width={500}
+                className="bg-white shadow-2xl rounded-md w-60 ring-1 ring-gray-900/10"
+                alt="couple pic"
+              />
+            </div>
           </div>
+
+          {/* <ul className="space-y-2 mx-auto mt-12 w-fit max-w-prose sm:text-lg">
+            <li className="w-fit">
+              <Check className="inline mr-1.5 w-5 h-5 text-green-600" />
+              High-quality silicone material
+            </li>
+            <li className="w-fit">
+              <Check className="inline mr-1.5 w-5 h-5 text-green-600" />
+              Scratch- and fingerprint resistant coating
+            </li>
+            <li className="w-fit">
+              <Check className="inline mr-1.5 w-5 h-5 text-green-600" />
+              Wireless charging compatible
+            </li>
+            <li className="w-fit">
+              <Check className="inline mr-1.5 w-5 h-5 text-green-600" />5 year
+              print warranty
+            </li> */}
+
+          <div className="flex justify-center">
+            {user ? (
+              <>
+                <Link
+                  className={buttonVariants({
+                    size: "lg",
+                    className: "mx-auto mt-8",
+                  })}
+                  href="/partners/search"
+                >
+                  Search your parter now{" "}
+                  <ArrowRight className="ml-1.5 w-4 h-4" />
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  className={buttonVariants({
+                    size: "lg",
+                    className: "mx-auto mt-8",
+                  })}
+                  href="/sign-up"
+                >
+                  Create your profile now{" "}
+                  <ArrowRight className="ml-1.5 w-4 h-4" />
+                </Link>
+              </>
+            )}
+          </div>
+          {/* </ul> */}
         </MaxWidthWrapper>
       </section>
     </div>
