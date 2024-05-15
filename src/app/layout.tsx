@@ -3,6 +3,7 @@ import { inter } from "./ui/fonts";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ClerkProvider } from "@clerk/nextjs";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "biyesaadi",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <body className={`${inter.className} antialiased`}>
           <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
