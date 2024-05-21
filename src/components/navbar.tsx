@@ -1,4 +1,4 @@
-import { ArrowRight, Divide, Search } from "lucide-react";
+import { Search, UserCog } from "lucide-react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Link from "next/link";
 import { buttonVariants, Button } from "./ui/button";
@@ -6,8 +6,8 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 import { SignOutButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = async () => {
-  const { userId } = auth();
   const user = await currentUser();
+  const { userId } = auth();
   const isAdmin = false;
   return (
     <nav className="top-0 z-[100] sticky inset-x-0 border-gray-200 bg-white/70 backdrop-blur-lg border-b w-full h-14 transition-all navbar">
@@ -28,15 +28,6 @@ const Navbar = async () => {
                 >
                   <UserButton />
                 </Link>
-                {/* <Link
-                  href=""
-                  className={buttonVariants({
-                    size: "sm",
-                    variant: "ghost",
-                  })}
-                >
-                  <SignOutButton />
-                </Link> */}
                 {isAdmin ? (
                   <Link
                     href="/api/auth/dashboard"
@@ -48,6 +39,16 @@ const Navbar = async () => {
                     Dashboard
                   </Link>
                 ) : null}
+                <Link
+                  href="/profile/update"
+                  className={buttonVariants({
+                    size: "sm",
+                    className: "hidden sm:flex items-center gap-1",
+                  })}
+                >
+                  {user.firstName + " profile"}
+                  <UserCog className="ml-1.5 w-5 h-5" />
+                </Link>
                 <Link
                   href="/api/auth/search"
                   className={buttonVariants({
@@ -70,6 +71,7 @@ const Navbar = async () => {
                 >
                   Sign up
                 </Link>
+                <div className="sm:block hidden bg-zinc-200 w-px h-8" />
                 <Link
                   href="/sign-in"
                   className={buttonVariants({
@@ -79,7 +81,6 @@ const Navbar = async () => {
                 >
                   Login
                 </Link>
-                {/* <div className="sm:block hidden bg-zinc-200 w-px h-8"></div> */}
               </>
             )}
           </div>
