@@ -21,7 +21,7 @@ export default async function Home() {
   return (
     <div className="bg-slate-50">
       <section className="grainy-light">
-        <MaxWidthWrapper className="lg:gap-x-0 xl:gap-x-8 lg:grid lg:grid-cols-3 pt-10 lg:pt-24 xl:pt-32 pb-24 sm:pb-32 lg:pb-52">
+        <MaxWidthWrapper className="lg:gap-x-0 xl:gap-x-8 lg:grid lg:grid-cols-3 pt-5 lg:pt-8 xl:pt-10 pb-10 sm:pb-14 lg:pb-20">
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative flex flex-col items-center lg:items-start mx-auto text-center lg:text-left">
               {/* <div className="lg:block -top-20 left-0 absolute hidden w-28">
@@ -33,7 +33,7 @@ export default async function Home() {
                   width={70}
                 />
               </div> */}
-              <h1 className="relative mt-16 w-fit font-bold text-5xl text-balance text-gray-900 md:text-5xl lg:text-6xl !leading-tight tracking-tight">
+              <h1 className="relative mt-2 w-fit font-bold text-5xl text-balance text-gray-900 md:text-5xl lg:text-6xl !leading-tight tracking-tight">
                 Find your&nbsp;
                 <span className="bg-green-600 px-2 text-white">soulmate</span>
                 &nbsp;within our trusted network
