@@ -24,10 +24,16 @@ export default async function Home() {
         <MaxWidthWrapper className="lg:gap-x-0 xl:gap-x-8 lg:grid lg:grid-cols-3 pt-10 lg:pt-24 xl:pt-32 pb-24 sm:pb-32 lg:pb-52">
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative flex flex-col items-center lg:items-start mx-auto text-center lg:text-left">
-              <div className="lg:block -top-20 left-0 absolute hidden w-28">
-                <img src="/snake-1.png" alt="logo" />
-              </div>
-              <h1 className="relative mt-16 w-fit font-bold text-5xl text-balance text-gray-900 md:text-6xl lg:text-7xl !leading-tight tracking-tight">
+              {/* <div className="lg:block -top-20 left-0 absolute hidden w-28">
+                <Image
+                  src="/logo.png"
+                  alt="logo"
+                  className=""
+                  height={40}
+                  width={70}
+                />
+              </div> */}
+              <h1 className="relative mt-16 w-fit font-bold text-5xl text-balance text-gray-900 md:text-5xl lg:text-6xl !leading-tight tracking-tight">
                 Find your&nbsp;
                 <span className="bg-green-600 px-2 text-white">soulmate</span>
                 &nbsp;within our trusted network
@@ -111,7 +117,7 @@ export default async function Home() {
                     <Star className="w-4 h-4 text-green-600 fill-green-500" />
                   </div>
                   <p>
-                    <span className="font-semibold">7,346</span> happy couples
+                    <span className="font-semibold">7,300+</span> happy couples
                   </p>
                 </div>
               </div>
@@ -121,18 +127,12 @@ export default async function Home() {
           <div className="flex justify-center col-span-full lg:col-span-1 lg:mx-0 mt-32 lg:mt-20 px-8 sm:px-16 md:px-0 w-full h-fit">
             <div className="relative md:max-w-xl">
               <img
-                src="/your-image.png"
-                alt="customer image"
-                className="sm:block xl:block -top-20 left-56 z-40 absolute hidden lg:hidden w-40 lg:w-52 select-none"
-              />
-              <img
                 src="/line.png"
                 alt="line image"
                 className="-bottom-6 -left-6 absolute w-20 select-none"
               />
-              {/* <Couple className="w-65" imgSrc="/happy-couple.jpg" /> */}
               <Image
-                className="rounded rounded-2xl w-72"
+                className="rounded rounded-2xl lg:w-60 xl:w-72"
                 src="/happy-couple.jpg"
                 height={800}
                 width={500}

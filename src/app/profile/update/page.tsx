@@ -47,6 +47,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { register } from "module";
 
 const FormSchema = z.object({
   dob: z.date({
