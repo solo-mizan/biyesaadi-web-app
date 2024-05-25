@@ -172,7 +172,17 @@ export function Reviews() {
         src="/what-people-are-buying.png"
         className="xl:block top-1/4 -left-72 absolute hidden select-none"
       />
-
+      <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6">
+        <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
+          <span className="bg-green-600 px-2 text-white">Singles</span> who are
+          looking for{" "}
+          <span className="relative px-2 text-purple-600">
+            partners{" "}
+            <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-blue-600 pointer-events-none" />
+          </span>
+        </h2>
+        <Search className="order-0 lg:order-2 w-20 h-20 text-purple-700" />
+      </div>
       <ReviewGrid />
     </MaxWidthWrapper>
   );
