@@ -43,7 +43,7 @@ const Navbar = async () => {
                   href="/profile/update"
                   className={buttonVariants({
                     size: "sm",
-                    className: "hidden sm:flex items-center gap-1",
+                    className: "items-center gap-1",
                   })}
                 >
                   {user.firstName + " profile"}
