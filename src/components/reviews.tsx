@@ -22,6 +22,7 @@ const COUPLES = [
   "/testimonials/7.jpg",
   "/testimonials/8.jpg",
   "/testimonials/9.jpg",
+  "/testimonials/10.jpg",
 ];
 
 function splitArray<T>(array: Array<T>, numParts: number) {
@@ -36,35 +37,6 @@ function splitArray<T>(array: Array<T>, numParts: number) {
   }
 
   return result;
-}
-
-function Review({ imgSrc, className, ...props }: ReviewProps) {
-  const POSSIBLE_ANIMATION_DELAYS = [
-    "0s",
-    "0.1s",
-    "0.2s",
-    "0.3s",
-    "0.4s",
-    "0.5s",
-  ];
-
-  const animationDelay =
-    POSSIBLE_ANIMATION_DELAYS[
-      Math.floor(Math.random() * POSSIBLE_ANIMATION_DELAYS.length)
-    ];
-
-  return (
-    <div
-      style={{ animationDelay }}
-      className={cn(
-        "animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5",
-        className
-      )}
-      {...props}
-    >
-      <Couple imgSrc={imgSrc} />
-    </div>
-  );
 }
 
 function ReviewColumn({
@@ -99,7 +71,7 @@ function ReviewColumn({
   return (
     <div
       ref={columnRef}
-      className={cn("animate-marquee space-y-8 py-4 h-2/3", className)}
+      className={cn("animate-marquee space-y-8 py-4", className)}
       style={{ "--marquee-duration": duration } as React.CSSProperties}
     >
       {reviews.concat(reviews).map((imgSrc, reviewIndex) => (
@@ -113,22 +85,54 @@ function ReviewColumn({
   );
 }
 
-export const ReviewGrid = () => {
+interface ReviewProps extends HTMLAttributes<HTMLDivElement> {
+  imgSrc: string;
+}
+
+function Review({ imgSrc, className, ...props }: ReviewProps) {
+  const POSSIBLE_ANIMATION_DELAYS = [
+    "0s",
+    "0.1s",
+    "0.2s",
+    "0.3s",
+    "0.4s",
+    "0.5s",
+  ];
+
+  const animationDelay =
+    POSSIBLE_ANIMATION_DELAYS[
+      Math.floor(Math.random() * POSSIBLE_ANIMATION_DELAYS.length)
+    ];
+
+  return (
+    <div
+      className={cn(
+        "animate-fade-in rounded-[2.25rem] bg-white p-6 opacity-0 shadow-xl shadow-slate-900/5",
+        className
+      )}
+      style={{ animationDelay }}
+      {...props}
+    >
+      <Couple imgSrc={imgSrc} />
+    </div>
+  );
+}
+
+function ReviewGrid() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.4 });
   const columns = splitArray(COUPLES, 3);
   const column1 = columns[0];
-  const column2 = columns[2];
+  const column2 = columns[1];
   const column3 = splitArray(columns[2], 2);
 
   return (
     <div
       ref={containerRef}
-      className="relative items-start gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -mx-4 mt-16 sm:mt-20 px-4 h-[49rem] max-h-[150vh] overflow-hidden lg:"
+      className="relative items-start gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -mx-4 mt-16 sm:mt-20 px-4 h-[49rem] max-h-[150vh] overflow-hidden"
     >
       {isInView ? (
         <>
-          {/* first column  */}
           <ReviewColumn
             reviews={[...column1, ...column3.flat(), ...column2]}
             reviewClassName={(reviewIndex) =>
@@ -139,8 +143,6 @@ export const ReviewGrid = () => {
             }
             msPerPixel={10}
           />
-
-          {/* second column  */}
           <ReviewColumn
             reviews={[...column2, ...column3[1]]}
             className="md:block hidden"
@@ -149,8 +151,6 @@ export const ReviewGrid = () => {
             }
             msPerPixel={15}
           />
-
-          {/* third column  */}
           <ReviewColumn
             reviews={column3.flat()}
             className="md:block hidden"
@@ -162,28 +162,18 @@ export const ReviewGrid = () => {
       <div className="bottom-0 absolute inset-x-0 bg-gradient-to-t from-slate-100 h-32 pointer-events-none" />
     </div>
   );
-};
+}
 
-export const Reviews = () => {
+export function Reviews() {
   return (
     <MaxWidthWrapper className="relative max-w-5xl">
-      {/* <img
+      <img
         aria-hidden="true"
         src="/what-people-are-buying.png"
-        className="xl:block top-1/3 -left-32 absolute hidden select-none"
-      /> */}
-      <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6">
-        <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
-          <span className="bg-green-600 px-2 text-white">Singles</span> who are
-          looking for{" "}
-          <span className="relative px-2 text-purple-600">
-            partners{" "}
-            <Icons.underline className="sm:block -bottom-6 absolute inset-x-0 hidden text-blue-600 pointer-events-none" />
-          </span>
-        </h2>
-        <Search className="order-0 lg:order-2 w-20 h-20 text-purple-700" />
-      </div>
+        className="xl:block top-1/4 -left-72 absolute hidden select-none"
+      />
+
       <ReviewGrid />
     </MaxWidthWrapper>
   );
-};
+}
