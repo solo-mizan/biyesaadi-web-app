@@ -33,7 +33,7 @@ export default async function Home() {
                   width={70}
                 />
               </div> */}
-              <h1 className="relative mt-2 w-fit font-bold text-5xl text-balance text-gray-900 md:text-5xl lg:text-6xl !leading-tight tracking-tight">
+              <h1 className="relative mt-2 w-fit font-bold text-3xl text-balance text-gray-900 md:text-5xl lg:text-6xl !leading-tight tracking-tight">
                 Find your&nbsp;
                 <span className="bg-green-600 px-2 text-white">soulmate</span>
                 &nbsp;within our trusted network
