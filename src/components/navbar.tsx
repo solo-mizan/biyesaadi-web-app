@@ -4,6 +4,7 @@ import Link from "next/link";
 import { buttonVariants, Button } from "./ui/button";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { SignOutButton, UserButton } from "@clerk/nextjs";
+import { ModeToggle } from "@/lib/dark-mode-toggle";
 
 const Navbar = async () => {
   const user = await currentUser();
@@ -17,17 +18,10 @@ const Navbar = async () => {
             biye <span className="text-green-600">saadi</span>
           </Link>
           <div className="flex items-center space-x-4 h-full">
+            {/* <ModeToggle /> */}
             {user ? (
               <>
-                <Link
-                  href=""
-                  className={buttonVariants({
-                    size: "sm",
-                    variant: "outline",
-                  })}
-                >
-                  <UserButton />
-                </Link>
+                <UserButton />
                 {isAdmin ? (
                   <Link
                     href="/api/auth/dashboard"
