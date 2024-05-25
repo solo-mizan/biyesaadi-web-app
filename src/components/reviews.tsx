@@ -172,7 +172,7 @@ export function Reviews() {
         src="/what-people-are-buying.png"
         className="xl:block top-1/4 -left-72 absolute hidden select-none"
       />
-      <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6">
+      <div className="flex lg:flex-row flex-col items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
         <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
           <span className="bg-green-600 px-2 text-white">Singles</span> who are
           looking for{" "}

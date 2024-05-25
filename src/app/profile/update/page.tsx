@@ -32,7 +32,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -47,7 +46,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { register } from "module";
 
 const FormSchema = z.object({
   dob: z.date({
@@ -74,10 +72,10 @@ const Page = () => {
   }
 
   return (
-    <div className="bg-slate-100">
-      <section className="p-10 grainy-dark">
+    <div className="bg-slate-100 grainy-dark">
+      <section className="p-2 md:p-4 lg:p-10">
         <Form {...form}>
-          <Card className="mx-auto w-[350px]">
+          <Card className="mx-auto lg:w-[350px]">
             <CardHeader>
               <CardTitle>Update your profile</CardTitle>
               <CardDescription>
@@ -92,12 +90,7 @@ const Page = () => {
                 <div className="items-center gap-4 grid w-full">
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="name">Name</Label>
-                    <Input
-                      readOnly
-                      id="name"
-                      type="text"
-                      placeholder="Mizan Rahman"
-                    />
+                    <Input id="name" type="text" placeholder="Mizan Rahman" />
                   </div>
                   <div className="flex flex-col space-y-1.5">
                     <Label htmlFor="name">Gender</Label>

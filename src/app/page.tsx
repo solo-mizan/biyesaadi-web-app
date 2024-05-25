@@ -1,17 +1,9 @@
-import Couple from "@/components/couple";
 import { Icons } from "@/components/icons";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Reviews } from "@/components/reviews";
 import { buttonVariants } from "@/components/ui/button";
 import { currentUser } from "@clerk/nextjs/server";
-import {
-  ArrowRight,
-  Check,
-  CirclePlus,
-  Cross,
-  Heart,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Check, Cross, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -244,9 +236,9 @@ export default async function Home() {
         </div>
       </section>
 
-      <section>
-        <MaxWidthWrapper className="py-24">
-          <div className="mb-12 px-6 lg:px-8">
+      <section className="grainy-dark">
+        <MaxWidthWrapper className="py-8 lg:py-10">
+          <div className="mb-6 px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
               <h2 className="order-1 mt-2 font-bold text-5xl text-balance text-center text-gray-900 md:text-6xl !leading-tight tracking-tight">
                 Find your{" "}
@@ -274,8 +266,6 @@ export default async function Home() {
                   alt="seperate people pic"
                 />
               </div>
-
-              {/* <Couple className="w-60" imgSrc="/horse_phone.jpg" /> */}
               <Image
                 src="/together.jpg"
                 height={900}
