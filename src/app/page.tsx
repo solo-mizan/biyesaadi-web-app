@@ -3,12 +3,13 @@ import MaxWidthWrapper from "@/components/max-width-wrapper";
 import { Reviews } from "@/components/reviews";
 import { buttonVariants } from "@/components/ui/button";
 import { currentUser } from "@clerk/nextjs/server";
+import { isClerkConfigured } from "@/lib/clerk";
 import { ArrowRight, Check, Cross, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function Home() {
-  const user = await currentUser();
+  const user = isClerkConfigured ? await currentUser() : null;
 
   return (
     <div className="bg-slate-50">

@@ -2,13 +2,12 @@ import { Search, UserCog } from "lucide-react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import Link from "next/link";
 import { buttonVariants, Button } from "./ui/button";
-import { auth, currentUser } from "@clerk/nextjs/server";
-import { SignOutButton, UserButton } from "@clerk/nextjs";
-import { ModeToggle } from "@/lib/dark-mode-toggle";
+import { currentUser } from "@clerk/nextjs/server";
+import { UserButton } from "@clerk/nextjs";
+import { isClerkConfigured } from "@/lib/clerk";
 
 const Navbar = async () => {
-  const user = await currentUser();
-  const { userId } = auth();
+  const user = isClerkConfigured ? await currentUser() : null;
   const isAdmin = false;
   return (
     <nav className="top-0 z-[100] sticky inset-x-0 border-gray-200 bg-white/70 backdrop-blur-lg border-b w-full h-14 transition-all navbar">

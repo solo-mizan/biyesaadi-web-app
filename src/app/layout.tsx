@@ -6,6 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/lib/theme-provider";
+import { isClerkConfigured } from "@/lib/clerk";
 
 export const metadata: Metadata = {
   title: "biyesaadi",
@@ -17,25 +18,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className={`${inter.className} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="flex flex-col min-h-screen">
-              <Navbar />
-              <div className="flex-grow">{children}</div>
-              <Footer />
-            </div>
-            <Toaster />
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+  const app = (
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <div className="flex-grow">{children}</div>
+            <Footer />
+          </div>
+          <Toaster />
+        </ThemeProvider>
+      </body>
+    </html>
   );
+
+  return isClerkConfigured ? <ClerkProvider>{app}</ClerkProvider> : app;
 }
